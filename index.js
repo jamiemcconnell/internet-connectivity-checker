@@ -2,7 +2,7 @@ var request = require('request');
 var mongoose = require('mongoose');
 var uuid = require('uuid');
 
-mongoose.connect('mongodb://192.168.99.100:27017/events');
+mongoose.connect('mongodb://mongodb:27017/events');
 mongoose.connection.on('connected', function() {
   console.log('Successfully connected to Mongo');
 });
