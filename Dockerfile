@@ -1,12 +1,14 @@
 FROM node:5.5.0
 
-EXPOSE 8080
-
 RUN mkdir -p /usr/share/icc
 
-COPY index.js /usr/share/icc
+COPY ./src/backend/ /usr/share/icc
 COPY package.json /usr/share/icc
+COPY constants.js /usr
 
 WORKDIR /usr/share/icc
 RUN npm install
+
+EXPOSE 8090
+
 CMD ["node", "index.js"]

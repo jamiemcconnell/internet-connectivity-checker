@@ -6,7 +6,8 @@ mongodb:
 app:
   build: .
   ports:
-    - "8080:8080"
+    - "8090:8090"
   links:
     - "mongodb"
-  
+  environment:
+    - MONGO_ENDPOINT=mongodb
